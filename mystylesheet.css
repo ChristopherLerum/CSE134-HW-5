@@ -1,0 +1,237 @@
+/* my personal stylesheet*/
+:root{
+    --box-color: #36393e;
+    --title-color: #424549;
+    --framing-color: #5e6369;
+    font-size: larger;
+    background-color: #282b30;
+    color: lightgray;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+@font-face {
+    font-family: "Open Sans", serif;
+    src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+}
+
+/*header and navigation and general rules*/
+hgroup{
+    text-align: center;
+    font-size: larger;
+}
+hgroup>p
+{
+    font-size: larger;    
+    margin: auto;
+}
+nav input[type='checkbox'], nav label {
+    display: none;
+}
+nav a{
+    color: lightgray;
+}
+nav ul{
+    display: flex;
+    justify-content:space-between
+}
+nav ul li{
+    text-align: center;
+    font-size: larger;
+    border-radius: .5em;
+    background-color: var(--title-color);
+    border: solid 2px var(--box-color);
+    list-style-type: none;
+    height: 1em;
+    width: 40dvw;
+    padding: 1vh 1vw;
+    margin: 0 1vw;
+}
+h2{
+    text-align: center;
+    width: 50%;
+    margin: 1rem auto auto;
+    padding: 0.5em;
+    border-radius: .5em;
+    background-color: var(--title-color);
+    border: solid 2px var(--framing-color);
+}
+figure{
+    border: solid 4px var(--framing-color);
+    background-color: var(--framing-color);
+    border-radius: 2rem;
+}
+a{
+    color: lightskyblue;
+}
+video{
+    width: 35vw;
+    height: auto;
+}
+iframe{
+    width: 35vw;
+    height: 19.7vw;
+}
+
+/*about me section*/
+#about{
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    border: solid 2px var(--framing-color);
+    background-color: var(--box-color);
+    border-radius: 5em;
+    padding: 0 5vw;
+}
+about-me-box {
+    display: flex;
+    align-items: center;
+}
+about-me-box>p{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+#about figure{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/*project section*/
+#projects-section{
+    
+    text-align: center;
+    margin: 1rem auto;
+    width: 90%;
+    border: solid 2px var(--framing-color);
+    background-color: var(--box-color);
+    border-radius: 3em;
+}
+project-boxes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid .5em var(--framing-color);
+    border-radius: 2em;
+    padding: 1em;
+    margin: 0.5em;
+    max-width: 40%;
+}
+#dnd figure{
+    background-color: rgba(211, 211, 211, 0.781);
+}
+
+/*Media Queries for index*/
+@media only screen and (max-width: 1200px){
+    about-me-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #about figure{
+        width: 350px;
+        border-top-left-radius: 2em;
+        border-top-right-radius: 2em;
+    }
+}
+@media only screen and (max-width: 860px){
+    .project{
+        max-width: 80%;
+    }
+    video{
+        width: 70vw;
+        height: auto;
+    }
+    iframe{
+        width: 70vw;
+        height: 39vw;
+    }   
+}
+@media only screen and (max-width: 600px){
+    nav{
+    border-radius: .5em;
+    background-color: var(--title-color);
+    border: solid 2px var(--box-color);
+    width: 9.5rem;
+    margin: 0 0 1rem auto;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    nav ul li{
+        width: 8rem;
+    }
+    nav input[type='checkbox'], nav label {
+        display:none;
+    }
+    input[type='checkbox']:not(:checked)+ul {
+        display: none;
+    }
+    nav label {
+        text-align: center;
+        display: block;
+        padding: 0.5em;
+        line-height: 1.6em;
+        align-self: center;
+    }
+
+    figure{
+        width: 50%;
+    }
+    figure img{
+        width: 100%;
+        height: auto;
+    }
+    #about img{
+        width: 75%
+    }
+    #about figure{
+        width: 50%;
+    }
+}
+
+/*contact me page*/
+#contact section{
+    margin: 1em auto;
+    text-align: center;
+    width: 70dvw;
+    border: solid 2px var(--framing-color);
+    background-color: var(--box-color);
+    border-radius: 5em;
+    padding: 0 5vw;
+}
+#contact li{
+    list-style-type: none;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80dvw;
+    margin: auto auto 3rem;
+
+}
+form-field{
+    display: flex;
+    flex-direction: column;
+}
+form-field input,textarea{
+    width: 40dvw;
+    border: solid 2px var(--framing-color);
+}
+
+/*Labs page*/
+table {
+    border-collapse: collapse;
+    border: solid 2px var(--framing-color);
+    background-color: var(--box-color);
+}
+td {
+    border: solid 1px var(--framing-color);
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Labs Page</title>
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
+    
+    <script></script>
+  </head>
+  <body>
+    <noscript>
+      JavaScript is not on for this HW
+    </noscript>
+    <header>
+        <hgroup>
+            <h1>Christopher Lerum's Portfolio</h1>
+            <p>Welcome!</p>
+        </hgroup>
+    </header>
+
+    <nav>
+        <label for='menu' tabindex="0">≡</label>
+        <input id='menu' type='checkbox' />
+
+        <ul>
+            <li><a href="index.html" style="text-decoration:none">About Me</a></li>
+            <li><a href="contactMe.html" style="text-decoration:none">Contact Me</a></li>
+            <li><a href="labs.html" style="text-decoration:none">Labs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <Section>
+            <H2>Labs</H2>
+
+            <table id="personal-examples">
+                <Caption>
+                    My Personal Examples Table
+                </Caption>
+                <colgroup>
+                    <col span="2" class="description" />
+                    <col span="1" class="Example" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Tag</th>
+                        <th scope="col">Notes</th>
+                        <th scope="col">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr>
+                        <th scope="row"><dfn>&lt;dialog&gt;</dfn></th>
+                        <td>This creates a pop up for the page that can be interacted with</td>
+                        <td>
+                            An example dialog box should have appeared when you opened this page
+                            <dialog open>
+                                <p>Welcome to the Labs Page. This is an example of a dialog box</p>
+                                <form method="dialog">
+                                  <button>Click this to close the dialog</button>
+                                </form>
+                            </dialog>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;kbd&gt;</dfn></th>
+                        <td>This helps show keyboard inputs in text</td>
+                        <td>
+                            Press <kbd>F5</kbd> to refresh the page and reshow the dialog box. <br/>
+                            Press <kbd>alt</kbd> + <kbd>F4</kbd> to close the application
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;code&gt;</dfn></th>
+                        <td>This displays contents styled like computer code</td>
+                        <td>
+                            The code tag would look like <br/>
+                            <code>&lt;code&gt;</code> <br/>
+                            in the HTML file
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;pre&gt;</dfn></th>
+                        <td>This creates a drop down menu with options to choose from</td>
+                        <td>
+                            This   is   some   text   before   &lt;pre&gt;<br/>
+                            <pre>This   is   some   text   after   &lt;pre&gt;</pre> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;datalist&gt;</dfn></th>
+                        <td>This displays contents before being formatted and as it appears in the HTML file. This does display whitespace</td>
+                        <td> 
+                            <label for="example-choice">Choose an example</label>
+                            <input list="example-options" id="example-choice" name="example-choice">
+
+                            <datalist id="example-options">
+                                <option value="code"></option>
+                                <option value="pre"></option>
+                                <option value="datalist"></option>
+                            </datalist>
+                        </td>
+                    </tr>    
+                    <tr>
+                        <th scope="row"><dfn>&lt;blockquote&gt;</dfn></th>
+                        <td>This creates a block to quote a message and link the source</td>
+                        <td>
+                            <blockquote cite="https://tvtropes.org/pmwiki/pmwiki.php/Quotes/MemeticsInFiction">
+                                <p>Memes. The DNA of the soul. They shape our will. They are the culture — they are everything we pass on</p>
+                            </blockquote>
+                            <p>-Monsoon in <cite>Metal Gear Rising: Revengeance</cite></p>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <th scope="row"><dfn>&lt;ins&gt;</dfn> and <dfn>&lt;del&gt;</dfn></th>
+                        <td>Ins shows which text have been added while del shows which text have been removed. Both can have timestamps and can cite change documents</td>
+                        <td>
+                            <ins datetime="2025-02-02">
+                                This text was added
+                            </ins> 
+                            <del datetime="2025-02-02">
+                                While this text was removed
+                            </del>
+                        </td>
+                    </tr>        
+                    <tr>
+                        <th scope="row">
+                            <dfn>&lt;dl&gt;</dfn> <br/>
+                            <dfn>&lt;dt&gt;</dfn> <br/>
+                            <dfn>&lt;dd&gt;</dfn>
+                        </th>
+                        <td>These tags creates a description list (dl) with description titles (dt) and the description list descriptions (dd)</td>
+                        <td>
+                            <p>Here is a quick description list</p>
+                            <dl>
+                                <dt><dfn>&lt;dl&gt;</dfn></dt>
+                                <dd>The first tag that sets up the description list</dd>
+
+                                <dt><dfn>&lt;dt&gt;</dfn></dt>
+                                <dd>The description list titles for each description</dd>
+
+                                <dt><dfn>&lt;dd&gt;</dfn></dt>
+                                <dd>The description list descriptions for each element in the list</dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;abbr&gt;</dfn></th>
+                        <td>This helps show abbreviations or acronyms</td>
+                        <td>
+                            &lt;abbr&gt; is an <abbr>HTML</abbr> (HyperText Markup Language) tag 
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;search&gt;</dfn></th>
+                        <td>This creates a search bar that can be used to search the site</td>
+                        <td>
+                            <form action="./search/">
+                                <label for="example-tag">Find an example</label>
+                                <input type="search" id="example-tag" name="q" />
+                                <button type="submit">Search</button>
+                              </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;audio&gt;</dfn></th>
+                        <td>This creates an embeded audio element that can play audio sources</td>
+                        <td>
+                            <figure>
+                                <figcaption>Listen to some sample audio:</figcaption>
+                                <audio controls src="resources/sampleaudio.mp3"></audio>
+                            </figure>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;canvas&gt;</dfn></th>
+                        <td>This creates a canvas element that can be used with javascript for graphics</td>
+                        <td>
+                            Currently the canvas displays nothing since javascript hasnt been made for it
+                            <canvas id="canvas" width="300" height="300">
+                                This is an empty canvas
+                            </canvas>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><dfn>&lt;svg&gt;</dfn></th>
+                        <td>This creates an scalable vector graphic element which makes a new coordinate system with its own view where you can add elements within</td>
+                        <td>
+                            <svg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg' height='300' width='300'>
+                                <rect x='0' y='0' width='50%' height='50%' fill='red' />
+                            </svg>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </Section>
+    </main>
+
+    <footer>
+        <address>
+            Contact me at: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a>.<br/>
+            Or message me through the <a href="contactMe.html">Contact Me</a> page.
+        </address>
+
+    </footer>
+  </body>
+</html>

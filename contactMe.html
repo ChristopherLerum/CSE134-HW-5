@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Contact Me Page</title>
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
+    
+    <!-- limit in HW2   -->
+    <style> 
+        article {
+            border: solid 2px black;
+            padding: 5px;
+        }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <noscript>
+      JavaScript is not on for this HW
+    </noscript>
+    <header>
+        <hgroup>
+            <h1>Christopher Lerum's Portfolio</h1>
+            <p>Welcome!</p>
+        </hgroup>
+    </header>
+
+    <nav>
+        <label for='menu' tabindex="0">≡</label>
+        <input id='menu' type='checkbox' />
+
+        <ul>
+            <li><a href="index.html" style="text-decoration:none">About Me</a></li>
+            <li><a href="contactMe.html" style="text-decoration:none">Contact Me</a></li>
+            <li><a href="labs.html" style="text-decoration:none">Labs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <section>
+                <h3>Here are ways you can contact me:</h3>
+    
+                <ol>
+                    <li>Email: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a></li>
+                    <li>Alternative Email: <a href="mailto:christopherlerum@yahoo.com">christopherlerum@yahoo.com</a></li>
+                    <li>Text me at: <a href="tel:+6198898042">(619) 889-8042</a></li>
+                </ol>
+            </section>
+
+            <form action="/submit" method="post" id="contactform">
+                <fieldset>
+                    <legend>You can also leave a message for me here</legend>
+                    <form-field>
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" name="fullname" id="fullname" required>
+                    </form-field>
+                    <br/>
+                    <form-field>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" required>
+                    </form-field>
+                    <br/>
+                    <form-field>
+                        <label for="topic">Topic:</label>
+                        <input type="text" name="topic" id="topic" required>
+                    </form-field>
+                    <br/>
+                    <form-field>
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                    </form-field>
+                    <br/>
+                    <button type="submit">Send</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Contact me at: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a>.<br/>
+            Or message me through the <a href="contactMe.html">Contact Me</a> page.
+        </address>
+
+    </footer>
+  </body>
+</html>
