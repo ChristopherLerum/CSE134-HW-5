@@ -51,32 +51,43 @@
                 </ol>
             </section>
 
-            <form oninput="result.value=fullname.value + email.value" action="/submit" method="post" id="contactform"> <!--https://httpbin.org/post -->
+            <form action="https://httpbin.org/post" method="post" id="contactform"> <!--oninput="result.value=fullname.value + email.value"  -->
                 <fieldset>
                     <legend>You can also leave a message for me here</legend>
                     <form-field>
                         <input type="hidden" name="possible_bot" id="possible_bot" value="true">
                     </form-field>
-                    <form-field>
-                        <label for="fullname">Full Name:</label>
-                        <input type="text" name="fullname" id="fullname" required>
+                    <form-field id="name-field">
+                        <label for="fullname">Full Name: <req-star>*</req-star></label>
+                        <input type="text" name="fullname" id="fullname" placeholder="Full name is required" required>
                     </form-field>
                     <br/>
-                    <form-field>
-                        <label for="email">Email:</label>
-                        <input type="text" name="email" id="email" required>
+                    <form-field id="email-field">
+                        <label for="email">Email: <req-star>*</req-star></label>
+                        <input type="text" name="email" id="email" placeholder="Email is required" required>
                     </form-field>
                     <br/>
-                    <form-field>
-                        <label for="topic">Topic:</label>
-                        <input type="text" name="topic" id="topic" required>
+                    <form-field id="topic-field">
+                        <label for="topic">Topic: <req-star>*</req-star></label>
+                        <input type="text" name="topic" id="topic" placeholder="Topic is required" required>
                     </form-field>
                     <br/>
                     <form-field>
                         <label for="message">Message:</label>
                         <textarea name="message" id="message" cols="30" rows="5"></textarea>
                     </form-field>
-                    <output name="result" for="fullname email"></output>
+                    <p>
+                        <req-star>*</req-star> - Required field
+                    </p>
+                    
+                    <output name="error">Error some required fields are left empty</output>
+                    <output name="result">
+                        <h3>Message Content: </h3>
+                        Full Name:   <br/>
+                        Email:      <br/>
+                        Topic:      <br/>
+                        Message:    <br/>
+                    </output>
                     <br/>
                     <button type="submit">Send</button>
                 </fieldset>

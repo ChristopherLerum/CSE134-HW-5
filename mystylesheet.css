@@ -3,6 +3,7 @@
     --box-color: #36393e;
     --title-color: #424549;
     --framing-color: #5e6369;
+    --req-color: rgb(255, 29, 29);
     font-size: larger;
     background-color: #282b30;
     color: lightgray;
@@ -224,6 +225,24 @@ form-field{
 form-field input,textarea{
     width: 40dvw;
     border: solid 2px var(--framing-color);
+}
+fieldset h3{
+    margin:0;
+}
+output{
+    text-align: center;
+    width: auto;
+    padding: 0.5em;
+    border: solid 2px var(--framing-color);
+    background-color: var(--box-color);
+    border-radius: 0.5em;
+}
+*:required:placeholder-shown{
+    border: 0;
+    border-bottom: solid 5px var(--req-color)
+}
+req-star{
+    color: var(--req-color);
 }
 
 /*Labs page*/
