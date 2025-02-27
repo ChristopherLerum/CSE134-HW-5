@@ -238,9 +238,17 @@ output{
     border-radius: 0.5em;
 }
 *:required:placeholder-shown{
-    border: 0;
-    border-bottom: solid 5px var(--req-color)
+    border: solid 1px var(--req-color)
 }
+*:required + p{
+    display: none;
+    border: solid 1px var(--req-color)
+}
+*:required:placeholder-shown + p{
+    display: ;
+    border: solid 1px var(--req-color)
+}
+
 req-star{
     color: var(--req-color);
 }

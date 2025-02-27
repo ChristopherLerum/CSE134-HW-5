@@ -59,12 +59,13 @@
                     </form-field>
                     <form-field id="name-field">
                         <label for="fullname">Full Name: <req-star>*</req-star></label>
-                        <input type="text" name="fullname" id="fullname" placeholder="Full name is required" required>
+                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+                        <p>The field is required</p>
                     </form-field>
                     <br/>
                     <form-field id="email-field">
                         <label for="email">Email: <req-star>*</req-star></label>
-                        <input type="text" name="email" id="email" placeholder="Email is required" required>
+                        <input type="email" name="email" id="email" placeholder="example@example.com" required>
                     </form-field>
                     <br/>
                     <form-field id="topic-field">
@@ -74,13 +75,13 @@
                     <br/>
                     <form-field>
                         <label for="message">Message:</label>
-                        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="5" minlength="10"></textarea>
                     </form-field>
                     <p>
                         <req-star>*</req-star> - Required field
                     </p>
                     
-                    <output name="error">Error some required fields are left empty</output>
+                    <output name="error">Error some required fields (<req-star>*</req-star>) are left empty</output>
                     <output name="result">
                         <h3>Message Content: </h3>
                         Full Name:   <br/>
