@@ -215,19 +215,19 @@ fieldset{
     flex-direction: column;
     align-items: center;
     width: 80dvw;
-    margin: auto auto 3rem;
-
+    margin: auto auto 1rem;
+    gap: 0;
 }
 form-field{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 form-field input,textarea{
-    width: 40dvw;
+    width: 45dvw;
     border: solid 2px var(--framing-color);
 }
 fieldset h3{
-    margin:0;
+    margin: 0;
 }
 output{
     text-align: center;
@@ -237,18 +237,20 @@ output{
     background-color: var(--box-color);
     border-radius: 0.5em;
 }
-*:required:placeholder-shown{
+*:invalid:required{
     border: solid 1px var(--req-color)
 }
-*:required + p{
-    display: none;
-    border: solid 1px var(--req-color)
+*:invalid + p{
+    visibility:visible !important;
+    color: var(--req-color);
+    font-size: small;
+    margin: 0;
 }
-*:required:placeholder-shown + p{
-    display: ;
-    border: solid 1px var(--req-color)
+*:valid + p{
+    visibility: hidden;
+    font-size: small;
+    margin: 0;
 }
-
 req-star{
     color: var(--req-color);
 }

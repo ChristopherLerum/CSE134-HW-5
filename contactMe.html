@@ -51,7 +51,7 @@
                 </ol>
             </section>
 
-            <form action="https://httpbin.org/post" method="post" id="contactform"> <!--oninput="result.value=fullname.value + email.value"  -->
+            <form action="https://httpbin.org/post" method="post" id="contactform" oninput="result.style='display:block', error.style='display:none;', result.value='Full Name: ' + fullname.value + ', Email: ' + email.value + ', Topic: ' + topic.value + ', Message: ' + message.value"> <!--oninput="result.value=fullname.value + email.value"  -->
                 <fieldset>
                     <legend>You can also leave a message for me here</legend>
                     <form-field>
@@ -59,36 +59,30 @@
                     </form-field>
                     <form-field id="name-field">
                         <label for="fullname">Full Name: <req-star>*</req-star></label>
-                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
-                        <p>The field is required</p>
+                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" pattern="[\w \-]{1,100}">
+                        <p>This field is incomplete</p>
                     </form-field>
-                    <br/>
                     <form-field id="email-field">
                         <label for="email">Email: <req-star>*</req-star></label>
                         <input type="email" name="email" id="email" placeholder="example@example.com" required>
+                        <p>This field is incomplete</p>
                     </form-field>
-                    <br/>
                     <form-field id="topic-field">
                         <label for="topic">Topic: <req-star>*</req-star></label>
-                        <input type="text" name="topic" id="topic" placeholder="Topic is required" required>
+                        <input type="text" name="topic" id="topic" placeholder="CSE134B Homework 4" required>
+                        <p>This field is incomplete</p>
                     </form-field>
-                    <br/>
                     <form-field>
                         <label for="message">Message:</label>
-                        <textarea name="message" id="message" cols="30" rows="5" minlength="10"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="5" minlength="10" pattern="[\w \-]{1,100}"></textarea>
+                        <p>This field is incomplete</p>
                     </form-field>
                     <p>
                         <req-star>*</req-star> - Required field
                     </p>
                     
                     <output name="error">Error some required fields (<req-star>*</req-star>) are left empty</output>
-                    <output name="result">
-                        <h3>Message Content: </h3>
-                        Full Name:   <br/>
-                        Email:      <br/>
-                        Topic:      <br/>
-                        Message:    <br/>
-                    </output>
+                    <output name="result" for="fullname" style="display: none;"></output>
                     <br/>
                     <button type="submit">Send</button>
                 </fieldset>
