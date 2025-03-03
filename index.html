@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
   </head>
   <body>
-    <noscript>
-      JavaScript is not on for this HW
-    </noscript>
     <header>
         <hgroup>
             <h1>Christopher Lerum's Portfolio</h1>
             <p>Welcome!</p>
         </hgroup>
+        <theme-button id="test" style="display: none;"> 
+            <label for="theme" id="theme-label">Dark Mode: ☽</label>
+            <input type="checkbox" id="theme" name="theme" checked>      
+        </theme-button>
     </header>
 
     <nav>
@@ -167,14 +168,62 @@
             Contact me at: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a>.<br/>
             Or message me through the <a href="contactMe.html">Contact Me</a> page.
         </address>
-
-        <template>
-            <!--Possibly use for future pages-->
-            <address>
-                Contact me at: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a>.<br/>
-                Or message me through the <a href="contactMe.html">Contact Me</a> page.
-            </address>
-        </template>
     </footer>
+
+    <!--
+    <script>
+        window.addEventListener('load', function(){
+            const check = localStorage.getItem("theme-check");
+
+            document.getElementById("test").style.display = "block";
+            if (check == "unchecked"){       
+                document.getElementById("theme").checked = false;
+                let mode = document.getElementById("theme-label");
+                mode.textContent = "Light Mode:☼";
+
+                let root = document.documentElement;
+                root.style.backgroundColor = "#97b5c4";
+                root.style.setProperty("--box-color", "#B0BEC5");
+                root.style.setProperty("--title-color", "#CFD8DC");
+                root.style.setProperty("--framing-color", "#8c949e");
+                root.style.setProperty("--nav-color", "black");
+                root.style.setProperty("--link-color", "blue");
+                root.style.color = "black";
+            }
+        });
+
+        document.getElementById("theme").addEventListener("change", function(event) {
+            if (event.target.checked){
+                let mode = document.getElementById("theme-label");
+                mode.textContent = "Dark Mode: ☽";
+
+                let root = document.documentElement;
+                root.style.backgroundColor = "#282b30";
+                root.style.setProperty("--box-color", "#36393e");
+                root.style.setProperty("--title-color", "#424549");
+                root.style.setProperty("--framing-color", "#5e6369");
+                root.style.setProperty("--nav-color", "lightgray");
+                root.style.setProperty("--link-color", "lightskyblue");
+                root.style.color = "lightgray";
+
+                localStorage.setItem("theme-check", "checked");
+            } else {
+                let mode = document.getElementById("theme-label");
+                mode.textContent = "Light Mode:☼";
+
+                let root = document.documentElement;
+                root.style.backgroundColor = "#97b5c4";
+                root.style.setProperty("--box-color", "#B0BEC5");
+                root.style.setProperty("--title-color", "#CFD8DC");
+                root.style.setProperty("--framing-color", "#8c949e");
+                root.style.setProperty("--nav-color", "black");
+                root.style.setProperty("--link-color", "blue");
+                root.style.color = "black";
+
+                localStorage.setItem("theme-check", "unchecked");
+            }
+        })
+    </script>-->
+    <script type="module" src="pageScript.js"></script>
   </body>
 </html>

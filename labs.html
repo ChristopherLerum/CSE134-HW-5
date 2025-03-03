@@ -7,7 +7,6 @@
     <link rel="icon" href="resources/favicon.ico" />
     <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
     
-    <script></script>
   </head>
   <body>
     <noscript>
@@ -18,6 +17,10 @@
             <h1>Christopher Lerum's Portfolio</h1>
             <p>Welcome!</p>
         </hgroup>
+        <theme-button id="test" style="display: none;"> 
+            <label for="theme" id="theme-label">Dark Mode: ☽</label>
+            <input type="checkbox" id="theme" name="theme" checked>      
+        </theme-button>
     </header>
 
     <nav>
@@ -206,5 +209,7 @@
         </address>
 
     </footer>
+
+    <script type="module" src="pageScript.js"></script>
   </body>
 </html>

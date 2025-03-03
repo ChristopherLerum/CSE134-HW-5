@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Contact Me Page Form Without JS</title>
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
+    
+    <!-- limit in HW2   -->
+    <style> 
+        article {
+            border: solid 2px black;
+            padding: 5px;
+        }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <noscript>
+      JavaScript is not on for this HW
+    </noscript>
+    <header>
+        <hgroup>
+            <h1>Christopher Lerum's Portfolio</h1>
+            <p>Welcome!</p>
+        </hgroup>
+    </header>
+
+    <nav>
+        <label for='menu' tabindex="0">≡</label>
+        <input id='menu' type='checkbox' />
+
+        <ul>
+            <li><a href="index.html" style="text-decoration:none">About Me</a></li>
+            <li><a href="contactMe.html" style="text-decoration:none">Contact Me</a></li>
+            <li><a href="labs.html" style="text-decoration:none">Labs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <section>
+                <h3>Here are ways you can contact me:</h3>
+    
+                <ol>
+                    <li>Email: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a></li>
+                    <li>Alternative Email: <a href="mailto:christopherlerum@yahoo.com">christopherlerum@yahoo.com</a></li>
+                    <li>Text me at: <a href="tel:+6198898042">(619) 889-8042</a></li>
+                </ol>
+            </section>
+
+            <form action="https://httpbin.org/post" method="post" id="contactform" oninput="result.style='display:block', error.style='display:none;', result.value='Full Name: ' + fullname.value + ', Email: ' + email.value + ', Topic: ' + topic.value + ', Message: ' + message.value"> <!--oninput="result.value=fullname.value + email.value"  -->
+                <fieldset>
+                    <legend>You can also leave a message for me here</legend>
+                    <form-field>
+                        <input type="hidden" name="possible_bot" id="possible_bot" value="true">
+                    </form-field>
+                    <form-field id="name-field">
+                        <label for="fullname">Full Name: <req-star>*</req-star></label>
+                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" pattern="[\w \-]{1,100}" required>
+                        <p>This field is incomplete</p>
+                    </form-field>
+                    <form-field id="email-field">
+                        <label for="email">Email: <req-star>*</req-star></label>
+                        <input type="email" name="email" id="email" placeholder="example@example.com" required>
+                        <p>This field is incomplete</p>
+                    </form-field>
+                    <form-field id="topic-field">
+                        <label for="topic">Topic: <req-star>*</req-star></label>
+                        <input type="text" name="topic" id="topic" placeholder="CSE134B Homework 4" pattern="[\w \-]{1,100}" required>
+                        <p>This field is incomplete</p>
+                    </form-field>
+                    <form-field>
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" cols="30" rows="5" minlength="10"></textarea>
+                        <p>This field is incomplete</p>
+                        <!--<input type="text" name="message" id="message" minlength="10" pattern="[\w \\$&,+;:=@?#\|'<>.^*\(\)%!\-]{1,1000}">-->
+                    </form-field>
+                    <p>
+                        <req-star>*</req-star> - Required field
+                    </p>
+                    
+                    <output name="error">Error some required fields (<req-star>*</req-star>) are left empty</output>
+                    <output name="result" for="fullname" style="display: none;"></output>
+                    <br/>
+                    <button type="submit">Send</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Contact me at: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a>.<br/>
+            Or message me through the <a href="contactMe.html">Contact Me</a> page.
+        </address>
+
+    </footer>
+  </body>
+</html>

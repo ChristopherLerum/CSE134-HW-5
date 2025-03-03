@@ -7,14 +7,12 @@
     <link rel="icon" href="resources/favicon.ico" />
     <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
     
-    <!-- limit in HW2   -->
     <style> 
         article {
             border: solid 2px black;
             padding: 5px;
         }
     </style>
-    <script></script>
   </head>
   <body>
     <noscript>
@@ -25,6 +23,10 @@
             <h1>Christopher Lerum's Portfolio</h1>
             <p>Welcome!</p>
         </hgroup>
+        <theme-button id="test" style="display: none;"> 
+            <label for="theme" id="theme-label">Dark Mode: ☽</label>
+            <input type="checkbox" id="theme" name="theme" checked>      
+        </theme-button>
     </header>
 
     <nav>
@@ -51,7 +53,7 @@
                 </ol>
             </section>
 
-            <form action="https://httpbin.org/post" method="post" id="contactform" oninput="result.style='display:block', error.style='display:none;', result.value='Full Name: ' + fullname.value + ', Email: ' + email.value + ', Topic: ' + topic.value + ', Message: ' + message.value"> <!--oninput="result.value=fullname.value + email.value"  -->
+            <form action="https://httpbin.org/post" method="post" id="contactform" > 
                 <fieldset>
                     <legend>You can also leave a message for me here</legend>
                     <form-field>
@@ -59,7 +61,7 @@
                     </form-field>
                     <form-field id="name-field">
                         <label for="fullname">Full Name: <req-star>*</req-star></label>
-                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" pattern="[\w \-]{1,100}">
+                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" pattern="[\w \-]{1,100}" required>
                         <p>This field is incomplete</p>
                     </form-field>
                     <form-field id="email-field">
@@ -69,20 +71,27 @@
                     </form-field>
                     <form-field id="topic-field">
                         <label for="topic">Topic: <req-star>*</req-star></label>
-                        <input type="text" name="topic" id="topic" placeholder="CSE134B Homework 4" required>
+                        <input type="text" name="topic" id="topic" placeholder="CSE134B Homework 4" pattern="[\w \-]{1,100}" required>
                         <p>This field is incomplete</p>
                     </form-field>
                     <form-field>
                         <label for="message">Message:</label>
-                        <textarea name="message" id="message" cols="30" rows="5" minlength="10" pattern="[\w \-]{1,100}"></textarea>
-                        <p>This field is incomplete</p>
+                        <textarea name="message" id="message" cols="30" rows="5" minlength="10" maxlength="300"></textarea>
+                        <p id="char-count">0/300</p>
+                        <!--<input type="text" name="message" id="message" minlength="10" pattern="[\w \\$&,+;:=@?#\|'<>.^*\(\)%!\-]{1,1000}">-->
+                    </form-field>
+                    <form-field>
+                        <input type="text" name="form-errors" id="form-errors" style="display: none;">
                     </form-field>
                     <p>
                         <req-star>*</req-star> - Required field
                     </p>
                     
-                    <output name="error">Error some required fields (<req-star>*</req-star>) are left empty</output>
-                    <output name="result" for="fullname" style="display: none;"></output>
+                    <output name="error" id="error-text" style="display: none;">Error some required fields (<req-star>*</req-star>) are left empty</output>
+                    <output name="result" id="result" style="display: none;">
+                        <p id="info-text">Info: </p>
+                        <pre id="result-text"></pre>
+                    </output> <!--style="display: none;"-->
                     <br/>
                     <button type="submit">Send</button>
                 </fieldset>
@@ -97,5 +106,6 @@
         </address>
 
     </footer>
+    <script type="module" src="pageScript.js"></script>
   </body>
 </html>

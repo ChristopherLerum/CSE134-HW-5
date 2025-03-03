@@ -1,12 +1,14 @@
 /* my personal stylesheet*/
 :root{
+    background-color: #282b30;
     --box-color: #36393e;
     --title-color: #424549;
     --framing-color: #5e6369;
     --req-color: rgb(255, 29, 29);
-    font-size: larger;
-    background-color: #282b30;
+    --nav-color: lightgray;
+    --link-color: lightskyblue;
     color: lightgray;
+    font-size: larger;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 @font-face {
@@ -14,7 +16,22 @@
     src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 }
 
+#theme{
+    display: none;
+}
+#theme-label{
+    text-align: center;
+    display: block;
+    background-color: var(--title-color);
+    border: solid 3px var(--framing-color);
+    width: 7rem;
+    border-radius: 0.5rem;
+}
+
 /*header and navigation and general rules*/
+h1{
+    margin: 0 auto;
+}
 hgroup{
     text-align: center;
     font-size: larger;
@@ -28,7 +45,7 @@ nav input[type='checkbox'], nav label {
     display: none;
 }
 nav a{
-    color: lightgray;
+    color: var(--nav-color);
 }
 nav ul{
     display: flex;
@@ -39,7 +56,7 @@ nav ul li{
     font-size: larger;
     border-radius: .5em;
     background-color: var(--title-color);
-    border: solid 2px var(--box-color);
+    border: solid 3px var(--framing-color);
     list-style-type: none;
     height: 1em;
     width: 40dvw;
@@ -61,7 +78,7 @@ figure{
     border-radius: 2rem;
 }
 a{
-    color: lightskyblue;
+    color: var(--link-color);
 }
 video{
     width: 35vw;
@@ -237,18 +254,27 @@ output{
     background-color: var(--box-color);
     border-radius: 0.5em;
 }
-*:invalid:required{
-    border: solid 1px var(--req-color)
+*:invalid:required:not(:placeholder-shown){
+    border: solid 2px var(--req-color)
 }
 *:invalid + p{
-    visibility:visible !important;
+    visibility:visible;
     color: var(--req-color);
     font-size: small;
     margin: 0;
 }
-*:valid + p{
+*:valid + p, *:invalid:placeholder-shown + p{
     visibility: hidden;
     font-size: small;
+    margin: 0;
+}
+#char-count{
+    visibility: visible;
+}
+#info-text{
+    margin: 0;
+}
+pre{
     margin: 0;
 }
 req-star{
