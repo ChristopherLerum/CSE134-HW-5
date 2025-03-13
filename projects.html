@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Projects Page</title>
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
+  </head>
+  <body>
+    <header>
+        <hgroup>
+            <h1>Christopher Lerum's Portfolio</h1>
+            <p>Welcome!</p>
+        </hgroup>
+        <theme-button id="test" style="display: none;"> 
+            <label for="theme" id="theme-label">Dark Mode: ☽</label>
+            <input type="checkbox" id="theme" name="theme" checked>      
+        </theme-button>
+    </header>
+
+    <nav>
+        <label for='menu' tabindex="0">≡</label>
+        <input id='menu' type='checkbox' />
+
+        <ul>
+            <li><a href="index.html" style="text-decoration:none">About Me</a></li>
+            <li><a href="contactMe.html" style="text-decoration:none">Contact Me</a></li>
+            <li><a href="projects.html" style="text-decoration:none">Projects</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="my-projects">
+            <h2>Projects</h2>
+            
+            <project-card></project-card>
+
+            <article id="devsurf" class="project">
+                <h2>Coding Project: DevSurf</h2>
+                <a href="https://github.com/cse110-sp24-group29/cse110-sp24-group29?tab=readme-ov-file">Link to Devsurf Github</a>
+
+                <figure>
+                    <picture>
+                        <source srcset="resources/devsurfLogo.png" media="(min-width: 550px)" />
+                        <img src="resources/devsurfLogofast.png" alt="The DevSurf logo" height="200">
+                    </picture>
+                </figure>
+
+                <p>
+                    <b>DevSurf</b> is a developer jounal I helped make in <em>CSE 110</em>. Our developer journal allows users to safely save their notes and information for multiple projects as well as keep a list of tasks and milestones for each project.
+                </p>
+
+                <!--
+                <details>
+                    <summary>DevSurf Presentation Video</summary>
+
+                    <my-videos class="video-block">
+
+                        <p>Embeded video </p>
+                        <video controls>
+                            <source src="resources/devsurfVideo.mp4">
+                        </video>
+
+                        <br/>
+                        <p>Embeded youtube video</p>
+                        <iframe 
+                            src="https://www.youtube.com/embed/RadWo17_BG4?si=ddUesK1FZFtR53wl" 
+                            title="YouTube video player" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
+                        
+                        <br/>
+                        <a href="https://www.youtube.com/watch?v=RadWo17_BG4&ab_channel=SakshamRai">Link to youtube video</a>
+                    </my-videos>
+
+
+                </details>
+                -->
+
+
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <address>
+            Contact me at: <a href="mailto:clerum@ucsd.edu">clerum@ucsd.edu</a>.<br/>
+            Or message me through the <a href="contactMe.html">Contact Me</a> page.
+        </address>
+    </footer>
+
+    <script type="module" src="pageScript.js"></script>
+  </body>
+</html>
