@@ -127,7 +127,6 @@ project-boxes{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 .project{
     display: flex;

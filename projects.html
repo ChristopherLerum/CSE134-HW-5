@@ -6,6 +6,7 @@
     <title>Personal Portfolio Projects Page</title>
     <link rel="icon" href="resources/favicon.ico" />
     <link rel="stylesheet" href="mystylesheet.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="./project-card-component/project-card.css" media="screen" type="text/css">
   </head>
   <body>
     <header>
@@ -33,55 +34,48 @@
     <main>
         <section id="my-projects">
             <h2>Projects</h2>
+            <project-boxes id="project-area">
+                <!--<project-card></project-card>-->
+            </project-boxes>
             
-            <project-card></project-card>
+            
+            <project-boxes>
+                
 
-            <article id="devsurf" class="project">
-                <h2>Coding Project: DevSurf</h2>
-                <a href="https://github.com/cse110-sp24-group29/cse110-sp24-group29?tab=readme-ov-file">Link to Devsurf Github</a>
+                <article id="research" class="project">
+                    <h2>Research Project: Evaluation of Pollster Accuracy</h2>
+                    <a href="https://github.com/COGS108/Group047-FA24">Link to Research Project Github</a>
 
-                <figure>
-                    <picture>
-                        <source srcset="resources/devsurfLogo.png" media="(min-width: 550px)" />
-                        <img src="resources/devsurfLogofast.png" alt="The DevSurf logo" height="200">
-                    </picture>
-                </figure>
+                    <figure>
+                        <picture>
+                            <source srcset="resources/map.png" media="(min-width: 550px)" />
+                            <img src="resources/mapfast.png" alt="Icon map of the USA" height="200">
+                        </picture>
+                    </figure>
 
-                <p>
-                    <b>DevSurf</b> is a developer jounal I helped make in <em>CSE 110</em>. Our developer journal allows users to safely save their notes and information for multiple projects as well as keep a list of tasks and milestones for each project.
-                </p>
+                    <p>
+                        <b>Evaluation of Pollster Accuracy</b> is a research project I helped make in <i>COGS 108</i>. Our project looks into which polling sources are the most accurate at predicting the outcomes of U.S. federal and gubernatorial elections. 
+                    </p>
+                </article>
+                
+            
 
-                <!--
-                <details>
-                    <summary>DevSurf Presentation Video</summary>
+                <article id="devsurf" class="project">
+                    <h2>Coding Project: DevSurf</h2>
+                    <a href="https://github.com/cse110-sp24-group29/cse110-sp24-group29?tab=readme-ov-file">Link to Devsurf Github</a>
 
-                    <my-videos class="video-block">
+                    <figure>
+                        <picture>
+                            <source srcset="resources/devsurfLogo.png" media="(min-width: 550px)" />
+                            <img src="resources/devsurfLogofast.png" alt="The DevSurf logo" height="200">
+                        </picture>
+                    </figure>
 
-                        <p>Embeded video </p>
-                        <video controls>
-                            <source src="resources/devsurfVideo.mp4">
-                        </video>
-
-                        <br/>
-                        <p>Embeded youtube video</p>
-                        <iframe 
-                            src="https://www.youtube.com/embed/RadWo17_BG4?si=ddUesK1FZFtR53wl" 
-                            title="YouTube video player" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
-                        
-                        <br/>
-                        <a href="https://www.youtube.com/watch?v=RadWo17_BG4&ab_channel=SakshamRai">Link to youtube video</a>
-                    </my-videos>
-
-
-                </details>
-                -->
-
-
-            </article>
+                    <p>
+                        <b>DevSurf</b> is a developer jounal I helped make in <em>CSE 110</em>. Our developer journal allows users to safely save their notes and information for multiple projects as well as keep a list of tasks and milestones for each project.
+                    </p>
+                </article>
+            </project-boxes>
         </section>
 
     </main>
@@ -94,5 +88,67 @@
     </footer>
 
     <script type="module" src="pageScript.js"></script>
+    <script type="module" src="./project-card-component/project-card.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', async () => {
+            //const url = "https://api.jsonbin.io/v3/b/67ccbf0ead19ca34f818d739"; import the json later
+            try {
+                /*
+                const response = await fetch(url);      // try to fetch the json later
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                */
+
+                // const jsonData = await response.json();
+                let storageData = {
+                    'h2':'Research Project: Evaluation of Pollster Accuracy',
+                    'aLink':'https://github.com/COGS108/Group047-FA24',
+                    'aText':'Link to Research Project Github',
+                    'pSource':'resources/map.png',
+                    'pImg':'resources/mapfast.png',
+                    'imgAlt':'Icon map of the USA',
+                    'p':'<b>Evaluation of Pollster Accuracy</b> is a research project I helped make in <i>COGS 108</i>. Our project looks into which polling sources are the most accurate at predicting the outcomes of U.S. federal and gubernatorial elections.'
+                };
+                
+                
+
+                localStorage.setItem('storageData', JSON.stringify(storageData));
+                const jsonGet = localStorage.getItem('storageData');
+                const jsonData = JSON.parse(jsonGet);
+
+                console.log(`${jsonData.h2}`);
+
+                window.project = document.createElement("project-card");
+                window.project.setAttribute('h2', `${jsonData.h2}`);
+                window.project.setAttribute('aLink', `${jsonData.aLink}`);
+                window.project.setAttribute('aText', `${jsonData.aText}`);
+                window.project.setAttribute('pSource', `${jsonData.pSource}`);
+                window.project.setAttribute('pImg', `${jsonData.pImg}`);
+                window.project.setAttribute('imgAlt', `${jsonData.imgAlt}`);
+                window.project.setAttribute('p', `${jsonData.p}`);
+                document.getElementById('project-area').appendChild(window.project);
+
+                
+
+                /*
+                jsonData.record.forEach(car => {
+                    window.project = document.createElement("project-card");
+                    
+                    window.galleryItem.setAttribute("make", `${car.make}`);
+                    window.galleryItem.setAttribute("model", `${car.model}`);
+                    window.galleryItem.setAttribute("year", `${car.year}`);
+                    window.galleryItem.setAttribute("image-url", `${car.image_url}`);
+                    document.getElementById("gallery").appendChild(window.galleryItem);
+                    console.log(`${car.year} ${car.make} ${car.model}: ${car.image_url}`);
+                    
+                });*/
+
+            } catch (error) {
+                console.error(error.message);
+            }
+        });
+    </script>
+
   </body>
 </html>
