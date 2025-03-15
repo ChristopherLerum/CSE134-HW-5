@@ -34,11 +34,18 @@
     <main>
         <section id="my-projects">
             <h2>Projects</h2>
+
+            <button-box>
+                <button id="remote">Load Remote</button>
+                <button id="local">Load Local</button>
+            </button-box>
+
             <project-boxes id="project-area">
                 <!--<project-card></project-card>-->
             </project-boxes>
+            <br/>
             
-            
+            <!--
             <project-boxes>
                 
 
@@ -76,6 +83,7 @@
                     </p>
                 </article>
             </project-boxes>
+            -->
         </section>
 
     </main>
@@ -90,60 +98,59 @@
     <script type="module" src="pageScript.js"></script>
     <script type="module" src="./project-card-component/project-card.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', async () => {
-            //const url = "https://api.jsonbin.io/v3/b/67ccbf0ead19ca34f818d739"; import the json later
+
+        document.getElementById("remote").addEventListener("click", async function(event){
+            const url = "https://api.jsonbin.io/v3/b/67d4ac338561e97a50ec20aa"; 
             try {
-                /*
-                const response = await fetch(url);      // try to fetch the json later
+                
+                const response = await fetch(url);      
                 if (!response.ok) {
                     throw new Error(`Response status: ${response.status}`);
                 }
-                */
-
-                // const jsonData = await response.json();
-                let storageData = {
-                    'h2':'Research Project: Evaluation of Pollster Accuracy',
-                    'aLink':'https://github.com/COGS108/Group047-FA24',
-                    'aText':'Link to Research Project Github',
-                    'pSource':'resources/map.png',
-                    'pImg':'resources/mapfast.png',
-                    'imgAlt':'Icon map of the USA',
-                    'p':'<b>Evaluation of Pollster Accuracy</b> is a research project I helped make in <i>COGS 108</i>. Our project looks into which polling sources are the most accurate at predicting the outcomes of U.S. federal and gubernatorial elections.'
-                };
                 
-                
+                const jsonData = await response.json();
+                const projectData = jsonData.record.storageData;
 
-                localStorage.setItem('storageData', JSON.stringify(storageData));
-                const jsonGet = localStorage.getItem('storageData');
-                const jsonData = JSON.parse(jsonGet);
+                localStorage.setItem('storageData', JSON.stringify(projectData));
 
-                console.log(`${jsonData.h2}`);
-
-                window.project = document.createElement("project-card");
-                window.project.setAttribute('h2', `${jsonData.h2}`);
-                window.project.setAttribute('aLink', `${jsonData.aLink}`);
-                window.project.setAttribute('aText', `${jsonData.aText}`);
-                window.project.setAttribute('pSource', `${jsonData.pSource}`);
-                window.project.setAttribute('pImg', `${jsonData.pImg}`);
-                window.project.setAttribute('imgAlt', `${jsonData.imgAlt}`);
-                window.project.setAttribute('p', `${jsonData.p}`);
-                document.getElementById('project-area').appendChild(window.project);
-
-                
-
-                /*
-                jsonData.record.forEach(car => {
+                projectData.forEach(card => { 
                     window.project = document.createElement("project-card");
-                    
-                    window.galleryItem.setAttribute("make", `${car.make}`);
-                    window.galleryItem.setAttribute("model", `${car.model}`);
-                    window.galleryItem.setAttribute("year", `${car.year}`);
-                    window.galleryItem.setAttribute("image-url", `${car.image_url}`);
-                    document.getElementById("gallery").appendChild(window.galleryItem);
-                    console.log(`${car.year} ${car.make} ${car.model}: ${car.image_url}`);
-                    
-                });*/
+                    window.project.setAttribute('h2', `${card.h2}`);
+                    window.project.setAttribute('aLink', `${card.aLink}`);
+                    window.project.setAttribute('aText', `${card.aText}`);
+                    window.project.setAttribute('pSource', `${card.pSource}`);
+                    window.project.setAttribute('pImg', `${card.pImg}`);
+                    window.project.setAttribute('imgAlt', `${card.imgAlt}`);
+                    window.project.setAttribute('p', `${card.p}`);
+                    document.getElementById('project-area').appendChild(window.project);
+                });
 
+            } catch (error) {
+                console.error(error.message);
+            }
+        });
+
+        document.getElementById("local").addEventListener("click", async function(event){
+            try {
+                const jsonGet = localStorage.getItem('storageData');
+                if (!jsonGet) {
+                    alert(`local storage data undefined\nCannot load local data`);
+                    throw new Error(`local storage data undefined`);
+                }
+                const projectData = JSON.parse(jsonGet);
+
+                projectData.forEach(card => { 
+                    window.project = document.createElement("project-card");
+                    window.project.setAttribute('h2', `${card.h2}`);
+                    window.project.setAttribute('aLink', `${card.aLink}`);
+                    window.project.setAttribute('aText', `${card.aText}`);
+                    window.project.setAttribute('pSource', `${card.pSource}`);
+                    window.project.setAttribute('pImg', `${card.pImg}`);
+                    window.project.setAttribute('imgAlt', `${card.imgAlt}`);
+                    window.project.setAttribute('p', `${card.p}`);
+                    document.getElementById('project-area').appendChild(window.project);
+                });
+                
             } catch (error) {
                 console.error(error.message);
             }
@@ -152,3 +159,4 @@
 
   </body>
 </html>
+

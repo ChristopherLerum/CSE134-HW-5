@@ -1,0 +1,22 @@
+{
+    "storageData":[
+      {
+        "h2":"Research Project: Evaluation of Pollster Accuracy",
+        "aLink":"https://github.com/COGS108/Group047-FA24",
+        "aText":"Link to Research Project Github",
+        "pSource":"resources/map.png",
+        "pImg":"resources/mapfast.png",
+        "imgAlt":"Icon map of the USA",
+        "p":"<b>Evaluation of Pollster Accuracy</b> is a research project I helped make in <i>COGS 108</i>. Our project looks into which polling sources are the most accurate at predicting the outcomes of U.S. federal and gubernatorial elections."
+      },
+      {
+        "h2":"Coding Project: DevSurf",
+        "aLink":"https://github.com/cse110-sp24-group29/cse110-sp24-group29?tab=readme-ov-file",
+        "aText":"Link to Devsurf Github",
+        "pSource":"resources/devsurfLogo.png",
+        "pImg":"resources/devsurfLogofast.png",
+        "imgAlt":"The DevSurf logo",
+        "p":"<b>DevSurf</b> is a developer jounal I helped make in <em>CSE 110</em>. Our developer journal allows users to safely save their notes and information for multiple projects as well as keep a list of tasks and milestones for each project."
+      }
+    ]
+  }
