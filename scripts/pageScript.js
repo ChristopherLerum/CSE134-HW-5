@@ -1,3 +1,4 @@
+// pageScripts.js
 /** index.html -------------------------------------------------*/
 window.addEventListener('DOMContentLoaded', function(){
     const check = localStorage.getItem("theme-check");
