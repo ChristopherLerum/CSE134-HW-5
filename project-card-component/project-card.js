@@ -28,20 +28,3 @@ class ProjectCard extends HTMLElement {
 // Define the custom element
 customElements.define('project-card', ProjectCard);
 
-
-/*
-
-        let h2 = "Research Project: Evaluation of Pollster Accuracy";
-        let aLink = 'https://github.com/COGS108/Group047-FA24';
-        let aText = 'Link to Research Project Github';
-        let pSource = 'resources/map.png';
-        let pImg = 'resources/mapfast.png';
-        let imgAlt = 'Icon map of the USA';
-        let p = '<b>Evaluation of Pollster Accuracy</b> is a research project I helped make in <i>COGS 108</i>. Our project looks into which polling sources are the most accurate at predicting the outcomes of U.S. federal and gubernatorial elections.';
-        const projectHTML = makeProjectHTML(h2, aLink, aText,pSource, pImg, imgAlt, p); 
-
-        let article = document.createElement('article');
-        article.innerHTML = projectHTML;
-
-        this.appendChild(article);
-*/

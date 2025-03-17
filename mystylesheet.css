@@ -314,3 +314,8 @@ td {
     border: solid 1px var(--framing-color);
 }
 
+#project-select{
+    margin: 0.25rem auto 0;
+    border-radius: .5em;
+    border: solid 2px var(--framing-color);
+}

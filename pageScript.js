@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', function(){
         root.style.setProperty("--link-color", "blue");
         root.style.color = "black";
     }
+    
+    document.getElementById("project-select").style.display = "block";
 });
 document.getElementById("theme").addEventListener("change", function(event) {
     if (event.target.checked){
@@ -48,8 +50,7 @@ document.getElementById("theme").addEventListener("change", function(event) {
 
         localStorage.setItem("theme-check", "unchecked");
     }
-})
-
+});
 
 /** contactMe.html -------------------------------------------------*/
 let form_errors = [];
@@ -136,7 +137,7 @@ document.getElementById("message").addEventListener("input", function(event) {
     let count = event.target.value.length;
     const charCounter = document.getElementById("char-count");
     
-    charCounter.textContent = `${count}/300`; // ${event.target.maxlength}`;
+    charCounter.textContent = `${count}/300`;
 
     if (event.target.value.length >= 250){
         charCounter.style.color='rgb(255, 29, 29)';

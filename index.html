@@ -52,18 +52,7 @@
         </section>
 
         <section id="projects-section">
-            <h2>Projects</h2>
-
-            <!--
-            <select name="project-select" id="project-select">
-                <option value="">-- Choose a Project Filter --</option>
-                <optgroup label="Project Filter">
-                    <option value="coding">Coding Projects</option>
-                    <option value="research">Research Projects</option>
-                    <option value="personal">Personal Projects</option>
-                </optgroup>
-            </select>
-            -->
+            <h2>Projects</h2>            
 
             <project-boxes>
 
@@ -87,7 +76,7 @@
 
                         <my-videos class="video-block">
 
-                            <p>Embeded video </p> <!--width="560" height="315"-->
+                            <p>Embeded video </p>
                             <video controls>
                                 <source src="resources/devsurfVideo.mp4">
                             </video>
@@ -172,60 +161,6 @@
         </address>
     </footer>
 
-    <!--
-    <script>
-        window.addEventListener('load', function(){
-            const check = localStorage.getItem("theme-check");
-
-            document.getElementById("test").style.display = "block";
-            if (check == "unchecked"){       
-                document.getElementById("theme").checked = false;
-                let mode = document.getElementById("theme-label");
-                mode.textContent = "Light Mode:☼";
-
-                let root = document.documentElement;
-                root.style.backgroundColor = "#97b5c4";
-                root.style.setProperty("--box-color", "#B0BEC5");
-                root.style.setProperty("--title-color", "#CFD8DC");
-                root.style.setProperty("--framing-color", "#8c949e");
-                root.style.setProperty("--nav-color", "black");
-                root.style.setProperty("--link-color", "blue");
-                root.style.color = "black";
-            }
-        });
-
-        document.getElementById("theme").addEventListener("change", function(event) {
-            if (event.target.checked){
-                let mode = document.getElementById("theme-label");
-                mode.textContent = "Dark Mode: ☽";
-
-                let root = document.documentElement;
-                root.style.backgroundColor = "#282b30";
-                root.style.setProperty("--box-color", "#36393e");
-                root.style.setProperty("--title-color", "#424549");
-                root.style.setProperty("--framing-color", "#5e6369");
-                root.style.setProperty("--nav-color", "lightgray");
-                root.style.setProperty("--link-color", "lightskyblue");
-                root.style.color = "lightgray";
-
-                localStorage.setItem("theme-check", "checked");
-            } else {
-                let mode = document.getElementById("theme-label");
-                mode.textContent = "Light Mode:☼";
-
-                let root = document.documentElement;
-                root.style.backgroundColor = "#97b5c4";
-                root.style.setProperty("--box-color", "#B0BEC5");
-                root.style.setProperty("--title-color", "#CFD8DC");
-                root.style.setProperty("--framing-color", "#8c949e");
-                root.style.setProperty("--nav-color", "black");
-                root.style.setProperty("--link-color", "blue");
-                root.style.color = "black";
-
-                localStorage.setItem("theme-check", "unchecked");
-            }
-        })
-    </script>-->
     <script type="module" src="pageScript.js"></script>
   </body>
 </html>

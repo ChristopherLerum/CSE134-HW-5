@@ -39,51 +39,23 @@
                 <button id="remote">Load Remote</button>
                 <button id="local">Load Local</button>
             </button-box>
+            
+            <select name="project-select" id="project-select" style="display: none;">
+                <option value="">-- Choose a Project Filter --</option>
+                <optgroup label="Project Filter">
+                    <option value="">All Projects</option>
+                    <option value="coding">Coding Projects</option>
+                    <option value="research">Research Projects</option>
+                    <option value="personal">Personal Projects</option>
+                </optgroup>
+            </select>
 
             <project-boxes id="project-area">
                 <!--<project-card></project-card>-->
             </project-boxes>
+
             <br/>
             
-            <!--
-            <project-boxes>
-                
-
-                <article id="research" class="project">
-                    <h2>Research Project: Evaluation of Pollster Accuracy</h2>
-                    <a href="https://github.com/COGS108/Group047-FA24">Link to Research Project Github</a>
-
-                    <figure>
-                        <picture>
-                            <source srcset="resources/map.png" media="(min-width: 550px)" />
-                            <img src="resources/mapfast.png" alt="Icon map of the USA" height="200">
-                        </picture>
-                    </figure>
-
-                    <p>
-                        <b>Evaluation of Pollster Accuracy</b> is a research project I helped make in <i>COGS 108</i>. Our project looks into which polling sources are the most accurate at predicting the outcomes of U.S. federal and gubernatorial elections. 
-                    </p>
-                </article>
-                
-            
-
-                <article id="devsurf" class="project">
-                    <h2>Coding Project: DevSurf</h2>
-                    <a href="https://github.com/cse110-sp24-group29/cse110-sp24-group29?tab=readme-ov-file">Link to Devsurf Github</a>
-
-                    <figure>
-                        <picture>
-                            <source srcset="resources/devsurfLogo.png" media="(min-width: 550px)" />
-                            <img src="resources/devsurfLogofast.png" alt="The DevSurf logo" height="200">
-                        </picture>
-                    </figure>
-
-                    <p>
-                        <b>DevSurf</b> is a developer jounal I helped make in <em>CSE 110</em>. Our developer journal allows users to safely save their notes and information for multiple projects as well as keep a list of tasks and milestones for each project.
-                    </p>
-                </article>
-            </project-boxes>
-            -->
         </section>
 
     </main>
@@ -98,7 +70,6 @@
     <script type="module" src="pageScript.js"></script>
     <script type="module" src="./project-card-component/project-card.js"></script>
     <script>
-
         document.getElementById("remote").addEventListener("click", async function(event){
             const url = "https://api.jsonbin.io/v3/b/67d4ac338561e97a50ec20aa"; 
             try {
@@ -122,6 +93,7 @@
                     window.project.setAttribute('pImg', `${card.pImg}`);
                     window.project.setAttribute('imgAlt', `${card.imgAlt}`);
                     window.project.setAttribute('p', `${card.p}`);
+                    window.project.setAttribute('class', `${card.class}`);
                     document.getElementById('project-area').appendChild(window.project);
                 });
 
@@ -129,7 +101,6 @@
                 console.error(error.message);
             }
         });
-
         document.getElementById("local").addEventListener("click", async function(event){
             try {
                 const jsonGet = localStorage.getItem('storageData');
@@ -155,8 +126,50 @@
                 console.error(error.message);
             }
         });
-    </script>
+        document.getElementById("project-select").addEventListener("change", function(event){
 
+        const projects = document.getElementsByTagName("project-card");
+
+        for(let i = 0; i < projects.length; i++){
+            projects[i].style.display = "flex";
+        }
+
+        if(event.target.value == "coding"){
+            const personal = document.getElementsByClassName("personal");
+            const research = document.getElementsByClassName("research");
+
+            for(let i = 0; i < personal.length; i++){
+                personal[i].style.display = "none";
+            }
+            for(let i = 0; i < research.length; i++){
+                research[i].style.display = "none";
+            }
+        }
+        if(event.target.value == "research"){
+            const personal = document.getElementsByClassName("personal");
+            const coding = document.getElementsByClassName("coding");
+
+            for(let i = 0; i < personal.length; i++){
+                personal[i].style.display = "none";
+            }
+            for(let i = 0; i < coding.length; i++){
+                coding[i].style.display = "none";
+            }
+        }
+        if(event.target.value == "personal"){
+            const research = document.getElementsByClassName("research");
+            const coding = document.getElementsByClassName("coding");
+
+            for(let i = 0; i < research.length; i++){
+                research[i].style.display = "none";
+            }
+            for(let i = 0; i < coding.length; i++){
+                coding[i].style.display = "none";
+            }
+        }
+        });
+
+    </script>
   </body>
 </html>
 
