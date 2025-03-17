@@ -48,6 +48,7 @@ document.getElementById("local").addEventListener("click", async function(event)
             window.project.setAttribute('pImg', `${card.pImg}`);
             window.project.setAttribute('imgAlt', `${card.imgAlt}`);
             window.project.setAttribute('p', `${card.p}`);
+            window.project.setAttribute('class', `${card.class}`);
             document.getElementById('project-area').appendChild(window.project);
         });
         
