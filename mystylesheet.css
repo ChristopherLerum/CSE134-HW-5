@@ -113,6 +113,32 @@ about-me-box>p{
     border-top-right-radius: 0;
 }
 
+/*experience section*/
+#experience{
+    margin: 1rem auto;
+    text-align: center;
+    width: 70%;
+    border: solid 2px var(--framing-color);
+    background-color: var(--box-color);
+    border-radius: 5em;
+    padding: 0 5vw;
+}
+experience-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.experience{
+    display: flex;
+    flex-direction: row;
+}
+experience-text{
+    max-width: 70%;
+}
+experience-text ul{
+    justify-items:flex-start  ;
+}
+
 /*project section*/
 #projects-section{
     
